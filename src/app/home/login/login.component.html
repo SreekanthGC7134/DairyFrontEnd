@@ -2,15 +2,14 @@
 
 <section class="background-radial-gradient overflow-hidden">
 
-    <style>
+  <style>
+    .background-radial-gradient {
 
-      .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
 
-        background-color: hsl(218, 41%, 15%);
+      background-image: url("assets/images/slide/slide-2.jpg");
 
-        background-image: url("assets/images/slide/slide-2.jpg");
-
-            /* hsl(218, 41%, 35%) 15%,
+      /* hsl(218, 41%, 35%) 15%,
 
             hsl(218, 41%, 30%) 35%,
 
@@ -32,10 +31,10 @@
 
             transparent 100%); */
 
-      }
+    }
 
- 
-/* 
+
+    /* 
       #radius-shape-1 {
 
         height: 220px;
@@ -72,27 +71,26 @@
 
       } */
 
- 
 
-      .bg-glass {
 
-        background-color: hsla(0, 0%, 100%, 0.9) !important;
+    .bg-glass {
 
-        backdrop-filter: saturate(200%) blur(25px);
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
 
-      }
+      backdrop-filter: saturate(200%) blur(25px);
 
-    </style>
+    }
+  </style>
 
- 
 
-    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
 
-      <div class="row gx-lg-5 align-items-center mb-5">
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
 
-        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+    <div class="row gx-lg-5 align-items-center mb-5">
 
-          <!-- <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsla(220, 91%, 50%, 0.874)">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+
+        <!-- <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsla(220, 91%, 50%, 0.874)">
 
             Digital <br />
 
@@ -102,87 +100,85 @@
 
 
 
-        </div>
-
- 
-
-        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-
-          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-
-          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
- 
-
-          <div class="card bg-glass">
-
-            <div class="card-body px-4 py-5 px-md-5">
-
-              <form [formGroup]='LoginFormGroup'>
-
- 
+      </div>
 
 
 
-                <!--Login Form-->
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
 
-                <div class="form-outline mb-4">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+
+
+        <div class="card bg-glass">
+
+          <div class="card-body px-4 py-5 px-md-5">
+
+            <form [formGroup]='LoginFormGroup'>
+
+
+
+
+
+              <!--Login Form-->
+
+              <div class="form-outline mb-4">
 
                 <h2 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(219, 91%, 13%)">
 
-                    Login <br />
-
-               
-
-                  </h2>
-
-                </div>
+                  Login <br />
 
 
 
-                <!-- Email input -->
+                </h2>
 
-                <div class="form-outline mb-4">
+              </div>
 
-                  <input type="email" id="form3Example3" class="form-control" formControlName="username" />
 
-                  <label class="form-label" for="form3Example3">Email address</label>
 
-                </div>
+              <!-- Email input -->
 
- 
+              <div class="form-outline mb-4">
 
-                <!-- Password input -->
+                <input type="email" id="form3Example3" class="form-control" formControlName="username" />
 
-                <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Email address</label>
 
-                  <input type="password" id="form3Example4" class="form-control" formControlName="password"/>
+              </div>
 
-                  <label class="form-label" for="form3Example4">Password</label>
 
-                </div>
 
- 
+              <!-- Password input -->
 
-                <!-- Checkbox -->
+              <div class="form-outline mb-4">
 
-               
+                <input type="password" id="form3Example4" class="form-control" formControlName="password" />
 
- 
+                <label class="form-label" for="form3Example4">Password</label>
 
-                <!-- Submit button -->
+              </div>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                <button type="submit" (click)="OnSubmit()" class="btn btn-primary btn-lg btn-block mb-4">
 
-                  Sign up
+              <!-- Checkbox -->
 
-                </button>
 
-              </form>
 
-            </div>
+
+
+              <!-- Submit button -->
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <button type="submit" (click)="OnSubmit()" class="btn btn-primary btn-lg btn-block mb-4">
+
+                Sign up
+
+              </button>
+
+            </form>
 
           </div>
 
@@ -192,8 +188,8 @@
 
     </div>
 
-  </section>
+  </div>
 
-  <!-- Section: Design Block -->
+</section>
 
-
+<!-- Section: Design Block -->

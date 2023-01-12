@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { BackEndServiceService } from 'src/app/back-end-service.service';
+
 
 @Component({
   selector: 'app-register',

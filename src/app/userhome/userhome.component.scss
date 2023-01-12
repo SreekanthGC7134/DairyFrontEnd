@@ -167,6 +167,20 @@ h6 {
   position: relative;
 }
 
+button {
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  height: 50px;
+
+  width: 50px;
+  border: none;
+
+}
+
+
 .navbar a,
 .navbar a:focus {
   display: flex;

@@ -12,6 +12,7 @@ import { ProfileeditComponent } from './userhome/profileedit/profileedit.compone
 import { TodoComponent } from './userhome/todo/todo.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { Userhome1Component } from './userhome/userhome1/userhome1.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [{path:'home',component:HomeComponent,
 children:
@@ -20,14 +21,14 @@ children:
 {path:'home1',component:Home1Component}]
 },
 
-{path:'userhome',component:UserhomeComponent,
+{path:'userhome',component:UserhomeComponent,canActivate:[AuthGuardService],
 children:
-[{path:'profile',component:ProfileComponent},
- {path:'profileedit',component:ProfileeditComponent},
- {path:'dairyentry',component:DairyentryComponent},
- {path:'todo',component:TodoComponent},
- {path:'DairyView',component:DairyviewComponent},
- {path:'userhome1',component:Userhome1Component}
+[{path:'profile',component:ProfileComponent,canActivate:[AuthGuardService]},
+ {path:'profileedit',component:ProfileeditComponent,canActivate:[AuthGuardService]},
+ {path:'dairyentry',component:DairyentryComponent,canActivate:[AuthGuardService]},
+ {path:'todo',component:TodoComponent,canActivate:[AuthGuardService]},
+ {path:'DairyView',component:DairyviewComponent,canActivate:[AuthGuardService]},
+ {path:'userhome1',component:Userhome1Component,canActivate:[AuthGuardService]}
 ]},
 
 

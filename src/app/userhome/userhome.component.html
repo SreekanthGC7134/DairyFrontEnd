@@ -35,14 +35,14 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" [routerLink]="['/home']">Home</a></li>
+          <li><a class="" [routerLink]="['/home']">Home</a></li>
           <li><a [routerLink]="['/userhome/profile']">Profile</a></li>
-          <li> <a [routerLink]="['/userhome/todo']">ToDo</a></li>
+          <li><a [routerLink]="['/userhome/todo']">ToDo</a></li>
           <li><a [routerLink]="['/userhome/dairyentry']">Dairy Entry</a></li>
           <li><a [routerLink]="['/userhome/DairyView']">Dairy View</a></li>
-
+          <li><button (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i></button></li>
          
-          <li><a href="contact.html">Contact</a></li>
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

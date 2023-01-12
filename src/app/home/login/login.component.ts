@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackEndServiceService } from 'src/app/back-end-service.service';
 
@@ -10,59 +10,45 @@ import { BackEndServiceService } from 'src/app/back-end-service.service';
 })
 export class LoginComponent
  {
+  submitted=false
   public Loginstatus = false;
-   isUserValid: boolean=false;
-
-
-  constructor(private fb: FormBuilder, private route: Router,private backendservice:BackEndServiceService) { }
-
-
-
-  LoginFormGroup = this.fb.group({
-
-    username: [''],
-
-    password: ['']
-
-  })
-
-  OnSubmit() {
-
-    if (this.LoginFormGroup.value.username == 'Admin' && this.LoginFormGroup.value.password == 'Admin') {
-
-      this.route.navigate(['userhome/userhome1'])
-
-    }
-
-    else {
-
-      this.Loginstatus = true;
-
-    }
-
+  isUserValid: boolean=false;
+  LoginFormGroup:FormGroup;
   
-  
-//   this.Loginstatus = true;
-//  this.backendservice.login([this.LoginFormGroup.value.username,this.LoginFormGroup.value.password]).subscribe(res => {
-//     console.log(res);
-//     console.log(this.LoginFormGroup.value.username)
-//     console.log(this.LoginFormGroup.value.password)
+  constructor(private fb:FormBuilder, private route: Router,private backendservice:BackEndServiceService) { 
+  this.LoginFormGroup = this.fb.group({
+    username: ['',[Validators.required,Validators.email]],
+    password: ['',[Validators.required]]
     
-//     if (res == 'Failed') {
-//       this.isUserValid = false;
-//       alert('Login Unsuccessful');
-//     } else {
-//       this.isUserValid = true;
-//       alert('Login successful');
-//       console.log(res);
-//       let obj = JSON.parse(res);
-//       console.log(obj.uid);
-//       localStorage.setItem("name",obj.name);
-//       localStorage.setItem("uid",obj.uid);
-//       this.route.navigate(['userhome'])
-//     }
-//   });
-// }
- }
+  })
 }
+  OnSubmit() {
+    this.submitted=true
+    if(this.LoginFormGroup.invalid)
+    {
+      return
+    }
+    this.Loginstatus = true;
+      this.backendservice.login([this.LoginFormGroup.value.username, this.LoginFormGroup.value.password]).subscribe(res => {
+        console.log(res);
+        console.log(this.LoginFormGroup.value.username)
+        console.log(this.LoginFormGroup.value.password)
+        
+        if (res == 'Failed') {
+          this.isUserValid = false;
+          alert('Login Unsuccessful');
+        } else {
+          this.isUserValid = true;
+          alert('Login successful');
+          console.log(res);
+          let obj = JSON.parse(res);
+          console.log(obj.uid);
+          localStorage.setItem("name",obj.name);
+          localStorage.setItem("uid",obj.uid);
+          localStorage.setItem('token', 'authenticated');
+          this.route.navigate(['userhome/userhome1'])
+        }
+      });
+  }
 
+ }
